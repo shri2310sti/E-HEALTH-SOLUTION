@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="flex flex-wrap gap-6">
           <div className="flex-1">
             <h1 className="text-xl font-bold cursor-pointer text-black">
-              Hospital Managements System
+              E-Health Solution
             </h1>
             <p className="text-gray-500 text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
@@ -91,11 +91,11 @@ const Footer = () => {
             <h4 className="text-xl font-bold cursor-pointer mb-4">Contact</h4>
             <div className="flex items-center gap-2 mb-2">
               <FaPhone className="text-gray-700" />
-              <span className="text-gray-700">963963963963</span>
+              <span className="text-gray-700">96000000</span>
             </div>
             <div className="flex items-center gap-2 mb-2">
               <MdEmail className="text-gray-700" />
-              <span className="text-gray-700">projectwithsgk@gmail.com</span>
+              <span className="text-gray-700">ss@gmail.com</span>
             </div>
             <div className="flex items-center gap-2 mb-2">
               <FaLocationArrow className="text-gray-700" />
@@ -111,7 +111,7 @@ const Footer = () => {
         </div>
       </footer>
       <p className="text-center cursor-pointer text-md py-4">
-        &copy;CopyRight By ProjectWithSGK.Design BY SGK
+        &copy;CopyRight By Shristi
       </p>
     </div>
   );
