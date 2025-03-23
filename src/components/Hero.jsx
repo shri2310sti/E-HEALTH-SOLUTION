@@ -11,7 +11,7 @@ const Hero = () => {
    group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
           >
             <p className="font-bold text-4xl px-4 text-center">
-              Hospital Management System
+              E-HEALTH SOLUTION
             </p>
             <p className="px-4 text-center py-4 text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
