@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLocationArrow, FaPhone, FaSquareInstagram } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { FaFacebookSquare, FaYoutube, FaGithub } from "react-icons/fa";
+import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -19,16 +19,16 @@ const Footer = () => {
       <footer className="max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* About Section */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
-            <h1 className="text-2xl font-bold text-black">Hospital Management System</h1>
+          <div className="p-4 bg-white rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+            <h1 className="text-2xl font-bold text-black hover:text-blue-600 transition">Hospital Management System</h1>
             <p className="text-gray-700 mt-2">
               Providing the best healthcare services with experienced doctors and modern technology.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
-            <h4 className="text-xl font-bold mb-4">Quick Links</h4>
+          <div className="p-4 bg-white rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+            <h4 className="text-xl font-bold mb-4 hover:text-blue-600 transition">Quick Links</h4>
             <ul className="space-y-2">
               {["Home", "About", "Services", "Contact", "Privacy And Policy"].map((item, index) => (
                 <li key={index}>
@@ -41,8 +41,8 @@ const Footer = () => {
           </div>
 
           {/* Hours */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
-            <h4 className="text-xl font-bold mb-4">Working Hours</h4>
+          <div className="p-4 bg-white rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+            <h4 className="text-xl font-bold mb-4 hover:text-blue-600 transition">Working Hours</h4>
             <ul className="space-y-2">
               {hours.map((element) => (
                 <li key={element.id} className="flex justify-between text-gray-700">
@@ -54,8 +54,8 @@ const Footer = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
-            <h4 className="text-xl font-bold mb-4">Contact</h4>
+          <div className="p-4 bg-white rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+            <h4 className="text-xl font-bold mb-4 hover:text-blue-600 transition">Contact</h4>
             <div className="flex items-center gap-2 mb-2">
               <FaPhone className="text-gray-700" />
               <span className="text-gray-700">96000000</span>
