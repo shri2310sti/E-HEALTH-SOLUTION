@@ -36,57 +36,58 @@ const MessageForm = () => {
       })
       .catch((err) => {
         console.log(err);
-        toast.err(err.response?.data?.message);
+        toast.error(err.response?.data?.message);
       });
   };
+
   return (
-    <div className="max-w-[1540px] mx-auto py-12 mb-2 px-4 bg-yellow-100">
-      <h2 className="text-2xl font-bold mb-6 text-center text-yellow-700">
-        Send Message Form Us
+    <div className="max-w-2xl mx-auto py-12 px-6 bg-blue-100 shadow-lg rounded-lg">
+      <h2 className="text-3xl font-bold mb-6 text-center text-blue-800">
+        Contact Us
       </h2>
-      <form action="" className="space-y-6" onSubmit={handleMessage}>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
+      <form className="space-y-6" onSubmit={handleMessage}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            placeholder="Frist Name"
-            className="w-full md:w-1/2 p-3 text-xl border-gray-300 bg-slate-300 rounded-md outlien-none shadow-md"
+            placeholder="First Name"
+            className="w-full p-3 border rounded-md focus:ring focus:ring-blue-300"
           />
           <input
             type="text"
-            placeholder="Last Name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            className="w-full md:w-1/2 p-3 text-xl border-gray-300 bg-slate-300 rounded-md outlien-none shadow-md"
+            placeholder="Last Name"
+            className="w-full p-3 border rounded-md focus:ring focus:ring-blue-300"
           />
         </div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="email"
-            placeholder=" Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full md:w-1/2 p-3 text-xl border-gray-300 bg-slate-300 rounded-md outlien-none shadow-md"
+            placeholder="Email"
+            className="w-full p-3 border rounded-md focus:ring focus:ring-blue-300"
           />
           <input
-            type="phone"
-            placeholder="Phone"
+            type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full md:w-1/2 p-3 text-xl border-gray-300 bg-slate-300 rounded-md outlien-none shadow-md"
+            placeholder="Phone"
+            className="w-full p-3 border rounded-md focus:ring focus:ring-blue-300"
           />
         </div>
         <textarea
-          placeholder="Message Lenght More than 10 Digits"
-          rows="7"
+          placeholder="Message (at least 10 characters)"
+          rows="5"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full p-3 text-md border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+          className="w-full p-3 border rounded-md focus:ring focus:ring-blue-300"
         />
-        <div className="flex justify-center mb-4">
-          <button className="bg-yellow-500 text-black py-2 px-24 rounded hover:bg-blue-600">
-            Message Send
+        <div className="flex justify-center">
+          <button className="bg-blue-500 text-white py-2 px-8 rounded-lg hover:bg-blue-600 transition">
+            Send Message
           </button>
         </div>
       </form>
