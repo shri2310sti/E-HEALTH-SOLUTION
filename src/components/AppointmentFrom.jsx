@@ -1,5 +1,4 @@
 import axios from "axios";
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -77,7 +76,7 @@ const AppointmentForm = () => {
       setDob("");
       setGender("");
       setAppointmentDate("");
-      setDepartment("");
+      setDepartment("Pediatrics");
       setDoctorFirstName("");
       setDoctorLastName("");
       setHasVisited(false);
@@ -88,64 +87,57 @@ const AppointmentForm = () => {
   };
 
   return (
-    <div className="container mx-auto py-12 px-4 bg-lavender-100 my-4">
-      <h1 className="text-3xl font-bold mb-8 text-center cursor-pointer">
-        Appointment
+    <div className="container mx-auto py-12 px-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg shadow-lg">
+      <h1 className="text-4xl font-extrabold mb-8 text-center cursor-pointer">
+        Book an Appointment
       </h1>
       <form className="space-y-6" onSubmit={handleAppointment}>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <input
             type="text"
             placeholder="First Name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           />
           <input
             type="text"
             placeholder="Last Name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           />
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           />
           <input
             type="number"
             placeholder="Mobile Number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           />
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
           <input
-            type="number"
+            type="text"
             placeholder="NIC"
             value={nic}
             onChange={(e) => setNic(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           />
           <input
             type="date"
-            placeholder="Date of Birth"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           />
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
           <select
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           >
             <option value="">Select Gender</option>
             <option value="Male">Male</option>
@@ -153,13 +145,10 @@ const AppointmentForm = () => {
           </select>
           <input
             type="date"
-            placeholder="Appointment Date"
             value={appointmentDate}
             onChange={(e) => setAppointmentDate(e.target.value)}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           />
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
           <select
             value={department}
             onChange={(e) => {
@@ -167,7 +156,7 @@ const AppointmentForm = () => {
               setDoctorFirstName("");
               setDoctorLastName("");
             }}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           >
             {departmentsArray.map((depart, index) => (
               <option value={depart} key={index}>
@@ -183,7 +172,7 @@ const AppointmentForm = () => {
               setDoctorLastName(lastName);
             }}
             disabled={!department}
-            className="w-full md:w-1/2 p-3 border border-gray-300  bg-slate-300 rounded-md outline-none shadow-md"
+            className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
           >
             <option value="">Select Doctor</option>
             {doctors
@@ -198,28 +187,28 @@ const AppointmentForm = () => {
               ))}
           </select>
         </div>
+
         <textarea
           rows="4"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           placeholder="Address"
-          className="w-full p-3 border border-gray-300 bg-slate-300 rounded-md outline-none shadow-md"
+          className="w-full p-3 border bg-white text-gray-800 rounded-md shadow-md"
         />
-        <div className="flex items-center text-center justify-center gap-4 mb-4">
-          <p className="mb-0 text-center cursor-pointer justify-center">
-            Have you visited before?
-          </p>
+
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <p className="mb-0 cursor-pointer text-lg">Have you visited before?</p>
           <input
             type="checkbox"
             checked={hasVisited}
             onChange={(e) => setHasVisited(e.target.checked)}
-            className="w-6 h-6 rounded-full "
+            className="w-6 h-6 rounded-md"
           />
         </div>
+
         <button
           type="submit"
-          className="mx-auto bg-blue-400 text-black w-full 
-          cursor-pointer hover:text-white py-3 px-6 rounded-md hover:bg-blue-700"
+          className="w-full bg-yellow-400 text-black text-lg font-semibold py-3 px-6 rounded-md hover:bg-yellow-500 transition-all duration-300 shadow-lg"
         >
           GET APPOINTMENT
         </button>
